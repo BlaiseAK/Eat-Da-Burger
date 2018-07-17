@@ -8,11 +8,11 @@
     <div class="row">
         <div class="col-md-4">
             {{!-- Uneatten burgers --}}
-            <h2>Burgers you haven't eatten yet!</h2>
+            <h2>Burgers you haven't eaten yet!</h2>
             <ol>
                 {{#each burgers}}
                     {{#unless devoured}}
-                        {{> burgers/burger-block devour=false}}
+                        {{> burgers/burger-block devour=true}}
                     {{/unless}}
                 {{/each}}
             </ol>
@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-4">
             {{!-- Eatten burgers --}}
-            <h2>Burgers you have eatten!</h2>
+            <h2>Burgers you have eaten!</h2>
             <ol>
                 {{#each burgers}}
                     {{#if devoured}}
