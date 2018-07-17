@@ -1,6 +1,18 @@
 // Import MySQL connection
 var connection = require("../config/connections.js");
 
+
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+  
+    return arr.toString();
+  }
+
+
 function objToSql(ob) {
     var arr = [];
 
@@ -33,7 +45,7 @@ var orm = {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += "?";
+        queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
         console.log(queryString);
