@@ -1,10 +1,29 @@
 .col-md-12 {
-    background-image: url('FeedMeSeymor.jpg');
+    background-image: url('../img/FeedMeSeymor.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center; 
+    margin-top: 50px;
+    height: 350px;
+    align-content: center;
+    text-align: center;
 }
 
 body {
     background-color: green;
+}
+
+.card {
+    margin: 10px;
+    padding: 20px;
+    background-color: bisque;
+}
+
+.row {
+    height: auto;
+}
+
+.col-md-4 {
+    align-content: center;
+    text-align: center;
+
 }
