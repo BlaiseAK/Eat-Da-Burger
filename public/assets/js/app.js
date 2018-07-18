@@ -18,9 +18,8 @@
             );
         });
 
-        $(".create-form").on("click", function(event) {
+        $(".create-form").on("submit", function(event) {
             event.preventDefault();
-        console.log("hello world");
 
             var newBurger = {
                 burger_name: $("#burgerName").val().trim(),
