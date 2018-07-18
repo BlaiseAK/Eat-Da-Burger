@@ -1,0 +1,10 @@
+.col-md-12 {
+    background-image: url('FeedMeSeymor.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+body {
+    background-color: green;
+}
