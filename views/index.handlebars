@@ -2,43 +2,43 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Eat da Burger!</h1>
+            <h1>Feed the plant!</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            {{!-- Uneatten burgers --}}
-            <h2>Burgers you haven't eaten yet!</h2>
-            <ol>
+            {{!-- Plants needing fed --}}
+            <h2>Plants needing to be fed!</h2>
+            <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
                         {{> burgers/burger-block devour=true}}
                     {{/unless}}
                 {{/each}}
-            </ol>
+            </ul>
 
         </div>
         <div class="col-md-4">
-            {{!-- Burger input --}}
-            <h2>Add a Burger!</h2>
+            {{!-- Plant input --}}
+            <h2>Add a plant!</h2>
             <form class="create-form">
                 <div class="form-group">
-                    <label for="burger">What kind of burger would you like?</label>
+                    <label for="burger">What will you name your plant?</label>
                     <input type="text" id="burgerName" name="name">
                 </div>
-                <button type="submit">Cook up the Burger!</button>
+                <button type="submit">Pick your plant</button>
             </form>
         </div>
         <div class="col-md-4">
-            {{!-- Eatten burgers --}}
-            <h2>Burgers you have eaten!</h2>
-            <ol>
+            {{!-- Fed plants --}}
+            <h2>Plants already fed!</h2>
+            <ul>
                 {{#each burgers}}
                     {{#if devoured}}
                         {{> burgers/burger-block devour=false}}
                     {{/if}}
                 {{/each}}
-            </ol>
+            </ul>
         </div>
     </div>
 
