@@ -100,3 +100,17 @@ h2 {
     text-align: center;
 
 }
+
+footer {
+    background: tan;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.disclaimer {
+    font-size: 10px;
+    font-weight: bold;
+}
