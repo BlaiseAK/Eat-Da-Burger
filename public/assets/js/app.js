@@ -7,33 +7,52 @@
                 devoured: newEat
             };
 
-            $.ajax("/api/burgers/" +id, {
+            $.ajax("/api/plants/" +id, {
                 type: "PUT",
                 data: devourStatus
             }).then(
                 function() {
-                    console.log("Changed eatten status to", newEat);
+                    // reloads page to update immediately
                     location.reload();
                 }
             );
         });
 
+        
+        // creates the form
         $(".create-form").on("submit", function(event) {
             event.preventDefault();
+            
+            // funtion to validate form
+            function validateForm() {
+                let isValid = true;
+                $("#plantName").each(function() {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+            
+            // if statement that checks first
+            if(validateForm()) {
 
-            var newBurger = {
-                burger_name: $("#burgerName").val().trim(),
-                devoured: false
-            };
+                // creates the new plant name to be sent to controller
+                var newPlant = {
+                    plant_name: $("#plantName").val().trim(),
+                    devoured: false
+                };
 
-            $.ajax("/api/burgers", {
-                type: "POST",
-                data: newBurger
-            }).then(
-                function() {
-                    console.log("New Burger Created");
-                    location.reload();
-                }
-            );
+                $.ajax("/api/plants", {
+                    type: "POST",
+                    data: newPlant
+                }).then(
+                    function() {
+                        location.reload();
+                    }
+                );
+            } else {
+                alert(`Please fill in a name.`)
+            }
         });
     });

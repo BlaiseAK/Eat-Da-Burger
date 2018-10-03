@@ -2,34 +2,34 @@ var express = require("express");
 
 var router = express.Router();
 
-var burger = require("../models/burger.js");
+var plant = require("../models/plant.js");
 
 router.get("/", function(req, res) {
-    burger.all(function(data) {
+    plant.all(function(data) {
         var hbsObject = {
-            burgers: data
+            plants: data
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
-router.post("/api/burgers", function(req, res) {
-    burger.create([
-        "burger_name", "devoured"
+router.post("/api/plants", function(req, res) {
+    plant.create([
+        "plant_name", "devoured"
     ], [
-        req.body.burger_name, req.body.devoured
+        req.body.plant_name, req.body.devoured
     ], function(result) {
         res.json({ id: result.insertID })
     });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/plants/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
-    burger.update({
+    plant.update({
         devoured: req.body.devoured
     }, condition, function(result) {
         if (result.changedRows == 0) {
